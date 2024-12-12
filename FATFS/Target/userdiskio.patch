@@ -1,0 +1,25 @@
+38d37
+< #include "user_diskio_spi.h"
+85c84,85
+<     return USER_SPI_initialize(pdrv);
+---
+>     Stat = STA_NOINIT;
+>     return Stat;
+99c99,100
+<     return USER_SPI_status(pdrv);
+---
+>     Stat = STA_NOINIT;
+>     return Stat;
+119c120
+<     return USER_SPI_read(pdrv,buff,sector,count);
+---
+>     return RES_OK;
+141c142
+<    return USER_SPI_write(pdrv,buff,sector,count);
+---
+>     return RES_OK;
+161c162,163
+<     return USER_SPI_ioctl(pdrv,cmd,buff);
+---
+>     DRESULT res = RES_ERROR;
+>     return res;
